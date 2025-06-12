@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Marketing Digital para Escritórios de Advocacia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .subsection h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .question-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .question-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        .question-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .question-list li strong {
+            color: #1e3c72;
+        }
+        
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .term-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .term-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .term-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .term-description {
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        
+        .term-example {
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-style: italic;
+            color: #2c3e50;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #856404;
+            margin: 8px 0;
+        }
+        
+        .footer {
+            background: #34495e;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .header::before {
+                display: none;
+            }
+            
+            .term-card:hover {
+                transform: none;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .badge {
+            background: #3498db;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .metric-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .metric-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .metric-question {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        
+        .metric-content {
+            padding: 20px;
+        }
+        
+        .metric-description {
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .benchmark-section {
+            margin: 15px 0;
+        }
+        
+        .benchmark {
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .benchmark.excellent {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        
+        .benchmark.good {
+            background: #d1ecf1;
+            color: #0c5460;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .benchmark.bad {
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .metric-example {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+            margin: 12px 0;
+            font-size: 0.95rem;
+        }
+        
+        .metric-insight {
+            background: #e8f4f8;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚖️ Guia de Marketing Digital</h1>
+            <div class="subtitle">Para Escritórios de Advocacia</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📊</span>
+                    Análise Estratégica de Campanhas
+                </h2>
+                
+                <div class="subsection">
+                    <h3>📊 Sobre os Anúncios</h3>
+                    <ul class="question-list">
+                        <li><strong>Qual foi a lógica usada para definir as personas dos anúncios?</strong></li>
+                        <li><strong>Quais testes A/B estão sendo feitos?</strong> O que está sendo testado: imagens, textos, CTAs?</li>
+                        <li><strong>Vocês validaram essas campanhas com base em quais dados ou benchmarks?</strong></li>
+                        <li><strong>Quais são os canais de tráfego pagos utilizados e por que foram escolhidos?</strong></li>
+                        <li><strong>Quais são as métricas atuais (CTR, CPC, conversão) e como elas estão sendo monitoradas?</strong></li>
+                        <li><strong>O que foi aprendido até agora com os resultados?</strong> Que ajustes foram feitos?</li>
+                        <li><strong>Vocês estão segmentando por tipo de ação jurídica?</strong> (ex: previdenciário ≠ trabalhista)</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>🧩 Sobre o Público-Alvo e a Jornada Jurídica</h3>
+                    <ul class="question-list">
+                        <li><strong>Vocês estudaram a jornada do cliente jurídico ou basearam-se apenas em marketing genérico?</strong></li>
+                        <li><strong>Como estão identificando as <span class="highlight">dores reais</span> dos clientes do escritório nos anúncios?</strong></li>
+                        <li><strong>Há coleta de feedback direto dos leads que chegam?</strong> O que eles estão dizendo?</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>🧠 Sobre Estratégia e Posicionamento</h3>
+                    <ul class="question-list">
+                        <li><strong>Qual foi a estratégia de diferenciação para destacar o escritório?</strong></li>
+                        <li><strong>Vocês adaptaram a linguagem e estética ao mundo jurídico (autoridade, confiança, clareza)?</strong></li>
+                        <li><strong>O escritório foi posicionado como especialista em alguma área?</strong> Qual foi a proposta de valor clara?</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>🌐 Sobre as Landing Pages</h3>
+                    <ul class="question-list">
+                        <li><strong>As páginas foram criadas com foco em conversão ou apenas como apresentação institucional?</strong></li>
+                        <li><strong>Há provas sociais visíveis (depoimentos, número de casos, etc)?</strong></li>
+                        <li><strong>Qual é a taxa de conversão média das landing pages?</strong></li>
+                        <li><strong>Foram usadas chamadas claras para ação e gatilhos psicológicos (urgência, exclusividade)?</strong></li>
+                        <li><strong>As páginas estão adaptadas para mobile?</strong> Já testaram em diferentes dispositivos?</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>🔁 Sobre o Processo e Comunicação</h3>
+                    <ul class="question-list">
+                        <li><strong>Com que frequência vocês nos atualizam sobre resultados e próximos passos?</strong></li>
+                        <li><strong>Existe algum processo de validação com o time jurídico antes de rodar os anúncios?</strong></li>
+                        <li><strong>Como vocês incorporam insights ou ajustes que vêm do time do escritório ou da IA do atendimento?</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>🛠️ Sobre Ferramentas e Técnicas</h3>
+                    <ul class="question-list">
+                        <li><strong>Estão usando ferramentas de rastreamento e mapas de calor nas landing pages?</strong></li>
+                        <li><strong>Quais ferramentas de análise estão utilizando para ajustar as campanhas?</strong></li>
+                        <li><strong>Existe um funil claro desenhado?</strong> Onde está a maior perda de conversão?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📊</span>
+                    Guia de Métricas para Advogados
+                </h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">📈 CTR (Taxa de Cliques)</div>
+                            <div class="metric-question">As pessoas estão clicando no meu anúncio?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra se o anúncio chama atenção.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Bom: Acima de 1%</div>
+                                <div class="benchmark bad">❌ Ruim: Abaixo de 1%</div>
+                            </div>
+                            <div class="metric-example">
+                                <strong>Exemplo:</strong> 1.000 pessoas viram, 20 clicaram = CTR de 2% (ótimo!)
+                            </div>
+                            <div class="metric-insight">
+                                💡 Se for baixo, o anúncio está ruim (imagem, texto ou público errado).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">💰 CPC (Custo por Clique)</div>
+                            <div class="metric-question">Está caro trazer alguém pro site?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra o preço para cada pessoa que clica.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Bom: R$2 a R$3</div>
+                                <div class="benchmark bad">❌ Ruim: Acima de R$5</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Se estiver gastando R$10 por clique, algo está errado (público mal escolhido ou anúncio fraco).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">🎯 Taxa de Conversão da Página</div>
+                            <div class="metric-question">A página está funcionando bem?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra se quem clicou está virando contato (lead).</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark excellent">🏆 Ótimo: Acima de 15%</div>
+                                <div class="benchmark good">✅ Aceitável: 8% a 15%</div>
+                                <div class="benchmark bad">❌ Ruim: Menos de 5%</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Se 100 pessoas visitam e só 3 viram lead → a página está fraca.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">💵 CPL (Custo por Lead)</div>
+                            <div class="metric-question">Está valendo a pena o investimento?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra quanto custa conseguir um contato interessado.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Facebook: R$5 a R$25</div>
+                                <div class="benchmark good">✅ Google: R$20 a R$60</div>
+                                <div class="benchmark bad">❌ Ruim: Acima de R$80</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Gastar R$80 para conseguir um contato pode não compensar.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">⏱️ Tempo na Página</div>
+                            <div class="metric-question">A página prende atenção?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra se a pessoa realmente leu algo ou saiu correndo.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Bom: Acima de 30 segundos</div>
+                                <div class="benchmark bad">❌ Ruim: Menos de 15 segundos</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Se o tempo é baixo, a página é chata ou confusa.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">📊 Taxa de Rejeição (Bounce Rate)</div>
+                            <div class="metric-question">A página serviu para algo?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra se a pessoa saiu da página sem fazer nada.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Bom: Menos de 50%</div>
+                                <div class="benchmark bad">❌ Ruim: Mais de 70%</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Alto bounce = página inútil ou sem chamada clara para ação (CTA).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-title">🔄 Frequência do Anúncio</div>
+                            <div class="metric-question">O público já cansou de ver isso?</div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-description">Mostra quantas vezes a mesma pessoa vê o anúncio.</div>
+                            <div class="benchmark-section">
+                                <div class="benchmark good">✅ Ideal: Até 3 vezes</div>
+                                <div class="benchmark bad">❌ Ruim: Acima de 5 vezes</div>
+                            </div>
+                            <div class="metric-insight">
+                                💡 Se aparece demais para a mesma pessoa, ela ignora → desperdiça dinheiro.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📖</span>
+                    Dicionário de Termos de Marketing Digital
+                </h2>
+                
+                <div class="term-grid">
+                    <div class="term-card">
+                        <div class="term-title">🎯 Público-alvo</div>
+                        <div class="term-description">
+                            Grupo específico de pessoas que você deseja atingir com seus anúncios. No caso jurídico, pode ser definido por faixa etária, região, profissão e tipo de problema jurídico.
+                            <div class="term-example">
+                                Ex: aposentadoria, revisão de benefício, rescisão indevida
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">👤 Persona</div>
+                        <div class="term-description">
+                            Representação semi-fictícia do cliente ideal, com base em dados reais.
+                            <div class="term-example">
+                                "Maria, 52 anos, professora, quer se aposentar, mas não entende as regras do INSS."
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">💡 Proposta de Valor</div>
+                        <div class="term-description">
+                            É o que diferencia o seu escritório dos outros.
+                            <div class="term-example">
+                                "Atendimento humanizado com foco exclusivo em causas trabalhistas para servidores públicos."
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">📈 CTR (Click Through Rate)</div>
+                        <div class="term-description">
+                            É a <strong>taxa de cliques</strong>. Mede quantas pessoas clicaram no anúncio em relação ao número de vezes que ele foi exibido.
+                            <div class="formula">(Cliques ÷ Impressões) × 100</div>
+                            <em>Quanto maior o CTR, melhor o engajamento.</em>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">💰 CPC (Custo por Clique)</div>
+                        <div class="term-description">
+                            Valor médio pago a cada clique no anúncio. Alta concorrência ou segmentação mal feita elevam esse custo.
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🧪 Testes A/B</div>
+                        <div class="term-description">
+                            Teste comparativo entre duas versões de algo (ex: dois anúncios ou duas landing pages) para ver qual converte mais.
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">📊 Taxa de Conversão</div>
+                        <div class="term-description">
+                            Percentual de visitantes que executam uma ação desejada (como preencher um formulário ou chamar no WhatsApp).
+                            <div class="term-example">
+                                Se 100 pessoas acessaram a página e 7 preencheram o formulário, a taxa de conversão é 7%.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">💬 CTA (Call to Action)</div>
+                        <div class="term-description">
+                            Chamada para ação. É o convite direto ao usuário.
+                            <div class="term-example">
+                                "Fale com um especialista agora" • "Verifique se você tem direito"
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">👀 Mapa de Calor (Heatmap)</div>
+                        <div class="term-description">
+                            Ferramenta que mostra onde os usuários clicam, se movem ou param o mouse em uma página. Ajuda a entender se os CTAs estão em local estratégico.
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">⚡ Funil de Vendas</div>
+                        <div class="term-description">
+                            Modelo que representa o caminho do cliente até contratar o serviço:
+                            <div class="term-example">
+                                <strong>1. Topo:</strong> descoberta (anúncio que informa o direito)<br>
+                                <strong>2. Meio:</strong> consideração (baixar e-book, ver vídeo)<br>
+                                <strong>3. Fundo:</strong> decisão (entrar em contato com o escritório)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🔁 Remarketing</div>
+                        <div class="term-description">
+                            Campanha que atinge pessoas que já interagiram com sua página ou anúncio, mas não converteram.
+                            <div class="term-example">
+                                Mostrar outro anúncio para quem já visitou o site jurídico.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">📱 Landing Page</div>
+                        <div class="term-description">
+                            Página focada em conversão. Difere de site institucional. Deve conter:
+                            <div class="term-example">
+                                • Headline forte<br>
+                                • Prova social (casos de sucesso)<br>
+                                • CTA claro<br>
+                                • Explicação breve do serviço
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🧠 Gatilhos Mentais</div>
+                        <div class="term-description">
+                            Recursos psicológicos usados para aumentar conversão.
+                            <div class="term-example">
+                                <strong>Urgência:</strong> "Últimas vagas"<br>
+                                <strong>Autoridade:</strong> "+10 anos de experiência"<br>
+                                <strong>Prova social:</strong> "+1.000 clientes satisfeitos"
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🕵️ Demanda Reprimida</div>
+                        <div class="term-description">
+                            Pessoas que têm uma dor jurídica, mas ainda não sabem que têm direito ou como resolver.
+                            <div class="term-example">
+                                Trabalhadores que não sabem que podem pedir revisão do FGTS.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">📊 Benchmarks</div>
+                        <div class="term-description">
+                            São referências de mercado para comparação. Ex: CTR médio em campanhas jurídicas, taxa de conversão esperada.
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">💬 Prova Social</div>
+                        <div class="term-description">
+                            Elementos que mostram que outras pessoas confiam no seu serviço:
+                            <div class="term-example">
+                                • Depoimentos<br>
+                                • Números (+5.000 atendimentos)<br>
+                                • Avaliações positivas
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🛠️ Pixel de Rastreamento</div>
+                        <div class="term-description">
+                            Ferramenta (ex: do Facebook/Meta) usada para acompanhar ações dos usuários no site e otimizar anúncios.
+                        </div>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-title">🔍 Palavras-chave</div>
+                        <div class="term-description">
+                            Termos que as pessoas pesquisam. Usados para atrair tráfego relevante em SEO e anúncios.
+                            <div class="term-example">
+                                "como dar entrada na aposentadoria"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+           
+                <h2 class="section-title">
+                    <span class="icon">🛠️</span>
+                    Ferramentas para Verificar Métricas
+                </h2>
+                
+                <div class="subsection">
+                    <h3>🔧 Ferramentas Essenciais</h3>
+                    <p>Aqui estão ferramentas simples (algumas gratuitas) que você pode pedir para sua equipe usar ou te mostrar:</p>
+                    
+                    <div class="term-grid">
+                        <div class="term-card">
+                            <div class="term-title">📊 Meta Ads Manager</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Ver CTR, CPC, CPL, frequência
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Gratuito com conta Meta<br>
+                                    <strong>Link:</strong> <a href="https://business.facebook.com/adsmanager" target="_blank" style="color: #3498db;">business.facebook.com/adsmanager</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">📈 Google Ads Dashboard</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Ver resultados dos anúncios no Google
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Mostra todas as métricas da campanha<br>
+                                    <strong>Link:</strong> <a href="https://ads.google.com" target="_blank" style="color: #3498db;">ads.google.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">📊 Google Analytics</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Ver comportamento dentro da página
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Taxa de rejeição, tempo de permanência<br>
+                                    <strong>Link:</strong> <a href="https://analytics.google.com" target="_blank" style="color: #3498db;">analytics.google.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">🔥 Hotjar</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Mapas de calor, cliques e gravações
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Mostra onde o usuário clica ou abandona<br>
+                                    <strong>Link:</strong> <a href="https://www.hotjar.com" target="_blank" style="color: #3498db;">hotjar.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">🔍 Ubersuggest / Semrush</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Ver volume de buscas, palavras-chave e SEO
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Útil pra criar blog, anúncios, conteúdo<br>
+                                    <strong>Links:</strong> <a href="https://neilpatel.com/ubersuggest" target="_blank" style="color: #3498db;">ubersuggest</a> | <a href="https://www.semrush.com" target="_blank" style="color: #3498db;">semrush.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">📈 RD Station / HubSpot</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Análise de funil de vendas, leads e conversão
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Mais usado com campanhas integradas<br>
+                                    <strong>Links:</strong> <a href="https://www.rdstation.com" target="_blank" style="color: #3498db;">rdstation.com</a> | <a href="https://www.hubspot.com" target="_blank" style="color: #3498db;">hubspot.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="term-card">
+                            <div class="term-title">⚡ PageSpeed Insights</div>
+                            <div class="term-description">
+                                <strong>Serve para:</strong> Avalia velocidade da página
+                                <div class="term-example">
+                                    <strong>Observações:</strong> Influencia na taxa de rejeição<br>
+                                    <strong>Link:</strong> <a href="https://pagespeed.web.dev" target="_blank" style="color: #3498db;">pagespeed.web.dev</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-insight" style="margin-top: 30px;">
+                        <strong>⚡ DICA DE OURO:</strong><br>
+                        Sempre peça <strong>print das métricas</strong> ou acesso temporário ao painel. Assim você <strong>confere com seus próprios olhos</strong> e consegue entender se a equipe está entregando o que promete.
+                    </div>
+                </div>
+            
+                    <div class="footer">
+                        <p>📄 Documento gerado para análise estratégica de campanhas de marketing digital para escritórios de advocacia</p>
+                        <p>Desenvolvido com foco em performance e conversão • <span class="badge">2025</span></p>
+                    </div>
+    </div>
+
+            
+
+    <script>
+        // Adiciona funcionalidade de impressão otimizada
+        window.addEventListener('beforeprint', function() {
+            document.body.style.background = 'white';
+        });
+        
+        window.addEventListener('afterprint', function() {
+            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        });
+        
+        // Smooth scroll para navegação interna
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
